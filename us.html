@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon/fvicon.png" type="image/x-icon">
+    <title>Study in the United States</title>
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .currency_convertor{
+ 
+ display: flex;
+ justify-content: center;
+ align-items: center;
+
+
+}
+
+
+        .container-main {
+            background-color: #a3e4d7;
+            padding: 20px 10px;
+        }
+
+        .container {
+            margin: 20px auto;
+            background-image: url("img9.jpg");
+            height: auto; /* Changed to auto for responsiveness */
+            min-height: 400px; /* Minimum height for smaller screens */
+            width: 90%;
+            max-width: 1200px;
+            background-size: cover;
+            background-position: center; /* Fixed missing semicolon */
+            background-repeat: no-repeat;
+            border-radius: 10px;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            width: 100%; /* Changed to 100% for responsiveness */
+        }
+
+        .login {
+            margin-left: auto; /* Changed to auto for responsiveness */
+            margin-top: 0;
+            position: static; /* Changed to static for better positioning */
+        }
+
+        li {
+            margin: 5px 10px;
+        }
+
+        li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            position: relative;
+            padding: 5px 0;
+            transition: color 0.3s ease;
+        }
+
+        li a:hover {
+            color: #00BFFF;
+        }
+
+        li a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #00BFFF;
+            transform: scaleX(0);
+            transform-origin: bottom right;
+            transition: transform 0.3s ease;
+        }
+
+        li a:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+
+        .des1 button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .des1 button:hover {
+            background-color: #00BFFF;
+        }
+
+        #targetDiv {
+            background-color: #a3e4d7;
+            padding: 20px;
+        }
+
+        header {
+            background-color: #0073e6;
+            color: white;
+            padding: 20px 15px;
+            text-align: center;
+        }
+
+        section {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #0073e6;
+            margin-bottom: 15px;
+        }
+
+        .intakes, .eligibility {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .intakes div, .eligibility div {
+            flex: 1 1 45%;
+            margin: 10px;
+            padding: 15px;
+            background-color: #e6f4ff;
+            border-left: 5px solid #0073e6;
+            border-radius: 5px;
+        }
+
+        .courses {
+            column-count: 2;
+            column-gap: 20px;
+        }
+
+        .universities-section {
+            background-color: #ffffff;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .university-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 0 auto;
+            max-width: 1200px;
+        }
+
+        .university-card {
+            background-color: #fafafa;
+            border: 1px solid #dddddd;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .university-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .container {
+                height: auto;
+                padding: 15px;
+            }
+
+            .des1 h1 {
+                font-size: 20px;
+            }
+
+            .des1 button {
+                font-size: 14px;
+                padding: 8px 15px;
+            }
+
+            .university-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .courses {
+                column-count: 1;
+            }
+
+            .intakes div, .eligibility div {
+                flex: 1 1 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .login {
+                margin-left: 0;
+                text-align: center;
+            }
+
+            ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            li {
+                margin: 10px 0;
+            }
+
+            .des1 {
+                margin-left: 20px !important; /* Adjusted for smaller screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container-main">
+        <div class="container">
+            <ul>
+              <li><a href="index.html"><b>Main</b></a></li>
+              <li><a href="#universities-section"><b>Universities</b></a></li>
+                
+                <li><a href="#Courses"><b>Courses</b></a></li>
+                <li><a href="contact.html"><b>Contact</b></a></li>
+                <li><a href="Appointment.html"><b>Book an Appointment</b></a></li>
+            </ul>
+            <br><br>
+            <div class="des1" style="margin-top: 100px; color: white;">
+                <h1>Study in the United States:<br>Top Universities, Cities, Cost, Visa, Scholarships</h1><br>
+                <button id="scrollButton">SEE MORE</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="targetDiv">
+        <header>
+            <h1>Study in the United States</h1>
+        </header>
+        <section>
+            <h2>What We Offer</h2>
+            <ul>
+                <li>Easy, hassle-free US study visa process</li>
+                <li>Experienced, trusted, and renowned US student visa consultants</li>
+                <li>Expert counsellors with end-to-end knowledge of US student visa requirements</li>
+                <li>Affordable services with personalized guidance</li>
+                <li>Scholarship opportunities for eligible students</li>
+                <li>Guaranteed admission to top universities and colleges in the US</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Intakes</h2>
+            <div class="intakes">
+                <div>January</div>
+                <div>May</div>
+                <div>August/September</div>
+            </div>
+        </section>
+        <section>
+            <h2>Education Levels Offered</h2>
+            <ul>
+                <li>Bachelor’s, Master’s, and Doctorate Degrees</li>
+                <li>Associate Degrees</li>
+                <li>Professional Certifications</li>
+            </ul>
+        </section>
+        <div class="Courses" id="Courses">
+        <section>
+            <h2>Courses</h2>
+            <div class="courses">
+                <p>Engineering</p>
+                <p>Business Administration</p>
+                <p>Computer Science</p>
+                <p>Psychology</p>
+                <p>Information Technology</p>
+                <p>Law</p>
+                <p>Environmental Science</p>
+                <p>Education</p>
+                <p>Life Sciences</p>
+                <p>Social Sciences</p>
+                <p>Health Sciences</p>
+                <p>Medicine</p>
+                <p>Artificial Intelligence</p>
+                <p>Cybersecurity</p>
+                <p>Data Science</p>
+                <p>Business Analytics</p>
+                <p>Culinary Arts</p>
+                <p>Arts and Humanities</p>
+                <p>Mathematics</p>
+                <p>Finance</p>
+            </div>
+        </section>
+        </div>
+        <section>
+            <h2>Eligibility Requirements</h2>
+            <div class="eligibility">
+                <div>
+                    <strong>Bachelor Programs</strong>
+                    <ul>
+                        <li>High school diploma with a GPA of 2.5 or above (on a 4.0 scale)</li>
+                        <li>TOEFL iBT 79+ or IELTS 6.5+ (no band less than 6.0)</li>
+                        <li>SAT/ACT scores may be required</li>
+                    </ul>
+                </div>
+                <div>
+                    <strong>Master Programs</strong>
+                    <ul>
+                        <li>Bachelor’s degree with a GPA of 3.0 or above</li>
+                        <li>TOEFL iBT 90+ or IELTS 7.0+ (no band less than 6.5)</li>
+                        <li>GRE/GMAT scores may be required for certain programs</li>
+                        <li>Relevant work experience may be required for some courses</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <script src="https://cdn.logwork.com/widget/currency_converter.js"></script>
+<a href="https://logwork.com/free-currency-converter-calculator" class="currency_convertor" data-color="#3b1f8f" data-background="#33a7c4" data-currencies="USD,EUR,JPY,GBP,CNY,INR">Currency Converter</a>
+        <div class="universities-section" id="universities-section">
+        <section class="universities-section">
+            <h2>US Universities</h2>
+            <p>Explore the top universities in the United States and find the perfect fit for your higher education journey.</p>
+            <div class="university-grid">
+                <div class="university-card">
+                    <h3>Harvard University</h3>
+                    <p>Globally renowned for its excellence in research, innovation, and education across all disciplines.</p>
+                    <a href="#">Learn More</a>
+                </div>
+                <div class="university-card">
+                    <h3>Stanford University</h3>
+                    <p>Located in the heart of Silicon Valley, known for its focus on technology and entrepreneurship.</p>
+                    <a href="#">Learn More</a>
+                </div>
+                <div class="university-card">
+                    <h3>Massachusetts Institute of Technology (MIT)</h3>
+                    <p>A leader in engineering, technology, and the sciences, consistently ranked among the top globally.</p>
+                    <a href="#">Learn More</a>
+                </div>
+                <div class="university-card">
+                    <h3>University of California, Berkeley</h3>
+                    <p>Famous for its vibrant campus life and top-ranked programs in business, law, and engineering.</p>
+                    <a href="#">Learn More</a>
+                </div>
+            </div>
+        </section>
+        </div>
+    </div>
+
+    
+
+    <script>
+        document.getElementById('scrollButton').addEventListener('click', function () {
+            const targetDiv = document.getElementById('targetDiv');
+            targetDiv.scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+<script>
+    (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="eSW2F4DK-bh5mDq1B8eMk";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+    </script>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help & Support - FEC</title>
+    <link rel="stylesheet" href="help.css">
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; }
+        .container { width: 80%; margin: auto; overflow: hidden; padding: 20px; background: white; }
+        h1, h2 { color: #333; }
+        .faq { margin-bottom: 20px; }
+        .faq h3 { background: #007bff; color: white; padding: 10px; cursor: pointer; }
+        .faq p { display: none; padding: 10px; background: #e9ecef; }
+        .contact, .resources { margin-top: 20px; }
+        .contact p, .resources ul { font-size: 18px; }
+        .resources ul { list-style-type: none; padding: 0; }
+        .resources li { margin: 5px 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Help & Support</h1>
+        <p>Welcome to the FEC Help Page. Find answers to your questions below.</p>
+        
+        <h2>Frequently Asked Questions (FAQ)</h2>
+        <div class="faq">
+            <h3>How do I apply for a student visa?</h3>
+            <p>You can apply for a student visa by submitting the required documents through our application portal.</p>
+        </div>
+        <div class="faq">
+            <h3>What documents are required?</h3>
+            <p>You need a passport, proof of admission, financial proof, and other supporting documents.</p>
+        </div>
+        <div class="faq">
+            <h3>How long does the visa process take?</h3>
+            <p>Processing times vary by country. It usually takes 4-8 weeks.</p>
+        </div>
+        
+        <h2>Contact Support</h2>
+        <div class="contact">
+            <p><strong>Email:</strong> fec@gmail.com</p>
+            <p><strong>Phone:</strong> +9477 770 9016</p>
+            <p><strong>WhatsApp:</strong> +9477 770 9017</p>
+            <p><strong>Office Address:</strong> No354,Highleve Road Nugegoda,Sri Lanka.</p>
+        </div>
+        
+        <h2>Helpful Resources & Downloads</h2>
+        <div class="resources">
+            <ul>
+                <li><a href="#">Visa Application Form</a></li>
+                <li><a href="#">List of Required Documents</a></li>
+                <li><a href="#">Interview Guidelines</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll(".faq h3").forEach(question => {
+            question.addEventListener("click", () => {
+                let answer = question.nextElementSibling;
+                answer.style.display = answer.style.display === "block" ? "none" : "block";
+            });
+        });
+    </script>
+</body>
+</html>
